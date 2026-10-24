@@ -61,3 +61,16 @@ Student-Management-System/
 ├── script.js
 └── README.md
 
+## 📸 Project Screenshots
+
+### 🏠 Dashboard
+
+![Dashboard](./dashboard.png)
+
+### 👨‍🎓 Student Records
+
+![Student Records](./students.png)
+
+### ➕ Add Student
+
+![Add Student](./add-student.png)
