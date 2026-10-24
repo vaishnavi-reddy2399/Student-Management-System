@@ -62,6 +62,8 @@ Student-Management-System/
 └── README.md
 ---
 
+---
+
 ## 📸 Project Screenshots
 
 ### 🏠 1. Dashboard
