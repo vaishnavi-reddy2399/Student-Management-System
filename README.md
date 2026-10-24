@@ -60,6 +60,7 @@ Student-Management-System/
 ├── style.css
 ├── script.js
 └── README.md
+---
 
 ## 📸 Project Screenshots
 
