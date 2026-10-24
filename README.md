@@ -60,3 +60,30 @@ Student-Management-System/
 ├── style.css
 ├── script.js
 └── README.md
+---
+
+## 📸 Project Screenshots
+
+### 🏠 1. Dashboard
+
+The main dashboard provides an overview of the Student Management System.
+
+![Student Management Dashboard](dashboard.png)
+
+---
+
+### 👨‍🎓 2. Student Records
+
+View and manage student information through the student records page.
+
+![Student Records](students.png)
+
+---
+
+### ➕ 3. Add Student
+
+The student registration page allows users to enter student details.
+
+![Add Student](add-student.png)
+
+---
