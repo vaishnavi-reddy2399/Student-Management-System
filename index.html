@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <h2>🎓 StudentHub</h2>
+
+            <nav>
+                <button class="nav-btn active" data-page="dashboard">
+                    Dashboard
+                </button>
+
+                <button class="nav-btn" data-page="students">
+                    Students
+                </button>
+
+                <button class="nav-btn" data-page="add">
+                    Add Student
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                Student Management System
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1 id="page-title">Dashboard</h1>
+                    <p>Manage your student information easily.</p>
+                </div>
+
+                <div class="admin-badge">
+                    👤 Admin
+                </div>
+            </header>
+
+            <!-- Dashboard Page -->
+            <section id="dashboard-page" class="page">
+
+                <div class="welcome-card">
+                    <h2>Welcome to StudentHub 👋</h2>
+
+                    <p>
+                        Manage student records, departments,
+                        and academic information in one place.
+                    </p>
+                </div>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <p>Total Students</p>
+                        <h2 id="total-students">0</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Departments</p>
+                        <h2 id="total-departments">0</h2>
+                    </div>
+
+                    <div class="stat-card">
+                        <p>Latest Registrations</p>
+                        <h2 id="latest-students">0</h2>
+                    </div>
+
+                </div>
+
+                <div class="panel">
+                    <h2>Recent Students</h2>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>USN</th>
+                                    <th>Name</th>
+                                    <th>Department</th>
+                                    <th>Semester</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="recent-students"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Students Page -->
+            <section id="students-page" class="page hidden">
+
+                <div class="panel">
+
+                    <div class="section-heading">
+                        <h2>Student Records</h2>
+
+                        <button class="primary-btn" id="add-student-btn">
+                            + Add Student
+                        </button>
+                    </div>
+
+                    <div class="filters">
+
+                        <input
+                            type="text"
+                            id="search-input"
+                            placeholder="Search by name or USN..."
+                        >
+
+                        <select id="department-filter">
+                            <option value="">All Departments</option>
+                            <option value="CSE">CSE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="ISE">ISE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="ME">Mechanical</option>
+                            <option value="CIVIL">Civil</option>
+                        </select>
+
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>USN</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Department</th>
+                                    <th>Semester</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="student-table"></tbody>
+
+                        </table>
+                    </div>
+
+                    <p id="empty-message" class="empty-message hidden">
+                        No students found. Add your first student!
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- Add Student Page -->
+            <section id="add-page" class="page hidden">
+
+                <div class="panel form-panel">
+
+                    <h2 id="form-heading">Register New Student</h2>
+
+                    <form id="student-form">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="usn">USN</label>
+
+                                <input
+                                    type="text"
+                                    id="usn"
+                                    placeholder="1RV23CS001"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    placeholder="Enter full name"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="student@example.com"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    placeholder="Enter phone number"
+                                    pattern="[0-9]{10}"
+                                    maxlength="10"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="department">Department</label>
+
+                                <select id="department" required>
+                                    <option value="">Select Department</option>
+                                    <option value="CSE">CSE</option>
+                                    <option value="ECE">ECE</option>
+                                    <option value="ISE">ISE</option>
+                                    <option value="EEE">EEE</option>
+                                    <option value="ME">Mechanical</option>
+                                    <option value="CIVIL">Civil</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="semester">Semester</label>
+
+                                <select id="semester" required>
+                                    <option value="">Select Semester</option>
+                                    <option value="1">1st Semester</option>
+                                    <option value="2">2nd Semester</option>
+                                    <option value="3">3rd Semester</option>
+                                    <option value="4">4th Semester</option>
+                                    <option value="5">5th Semester</option>
+                                    <option value="6">6th Semester</option>
+                                    <option value="7">7th Semester</option>
+                                    <option value="8">8th Semester</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="form-actions">
+
+                            <button
+                                type="button"
+                                class="secondary-btn"
+                                id="cancel-btn"
+                            >
+                                Cancel
+                            </button>
+
+                            <button type="submit" class="primary-btn">
+                                Save Student
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+            <footer>
+                StudentHub © 2026 | Student Management System
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
