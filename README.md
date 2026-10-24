@@ -60,6 +60,7 @@ Student-Management-System/
 ├── style.css
 ├── script.js
 └── README.md
+
 ---
 
 ## 📸 Project Screenshots
@@ -75,3 +76,5 @@ Student-Management-System/
 ### ➕ Add Student
 
 ![Add Student](./add-student.png)
+
+---
